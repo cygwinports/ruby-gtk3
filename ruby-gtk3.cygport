@@ -1,0 +1,11 @@
+inherit rubygem
+
+NAME="ruby-gtk3"
+VERSION=1.2.1
+RELEASE=1
+CATEGORY="Ruby"
+SUMMARY="Ruby GTK+3 bindings"
+DESCRIPTION="Ruby/GTK3 is a Ruby binding of GTK+-3.x."
+HOMEPAGE="http://ruby-gnome2.sourceforge.jp/"
+
+DEPS_PATH="/usr/lib/ruby/gems/${RUBY_VERSION}/gems/cairo-*/lib:/usr/lib/ruby/gems/${RUBY_VERSION}/gems/glib2-*/lib:/usr/lib/ruby/gems/${RUBY_VERSION}/gems/gdk3-*/lib:/usr/lib/ruby/gems/${RUBY_VERSION}/gems/pango-*/lib"
