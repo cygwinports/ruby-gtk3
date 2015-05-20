@@ -8,6 +8,8 @@ SUMMARY="Ruby GTK+3 bindings"
 DESCRIPTION="Ruby/GTK3 is a Ruby binding of GTK+-3.x."
 HOMEPAGE="http://ruby-gnome2.sourceforge.jp/"
 
+PATCH_URI="2.2.5-link-deps.patch"
+
 PKG_NAMES="${NAME} ${NAME}-devel ${NAME}-doc"
 ruby_gtk3_CONTENTS="--exclude=sample ${RUBYGEM_EXTDIR#/} ${RUBYGEM_INSTDIR#/} ${RUBYGEM_SPEC#/}"
 ruby_gtk3_devel_REQUIRES="${NAME} ruby-glib2-devel libgtk3-devel"

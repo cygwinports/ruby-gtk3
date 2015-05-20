@@ -1,0 +1,13 @@
+gdk3 is pure G-I now, and cairo-gobject does not install any headers
+
+--- origsrc/gtk3-2.2.5/ext/gtk3/extconf.rb	2015-05-20 12:28:20.557787300 -0500
++++ src/gtk3-2.2.5/ext/gtk3/extconf.rb	2015-05-20 13:55:02.784886300 -0500
+@@ -33,7 +33,7 @@ end
+ 
+ have_func("rb_errinfo")
+ 
+-["glib2", "cairo-gobject", "atk", "pango", "gdk_pixbuf2", "gdk3"].each do |package|
++["glib2", "atk", "pango", "gdk_pixbuf2"].each do |package|
+   depended_module_name = package.gsub(/-/, "_")
+   directory = "#{package}#{version_suffix}"
+   build_dir = "#{directory}/tmp/#{RUBY_PLATFORM}/#{depended_module_name}/#{RUBY_VERSION}"
