@@ -1,19 +1,19 @@
 inherit rubygem
 
 NAME="ruby-gtk3"
-VERSION=2.2.5
+VERSION=3.1.1
 RELEASE=1
 CATEGORY="Ruby"
 SUMMARY="Ruby GTK+3 bindings"
 DESCRIPTION="Ruby/GTK3 is a Ruby binding of GTK+-3.x."
 HOMEPAGE="http://ruby-gnome2.sourceforge.jp/"
 
-PATCH_URI="2.2.5-link-deps.patch"
+PATCH_URI="3.1.1-link-deps.patch"
 
 PKG_NAMES="${NAME} ${NAME}-devel ${NAME}-doc"
 ruby_gtk3_CONTENTS="--exclude=sample ${RUBYGEM_EXTDIR#/} ${RUBYGEM_INSTDIR#/} ${RUBYGEM_SPEC#/}"
-ruby_gtk3_devel_REQUIRES="${NAME} ruby-glib2-devel libgtk3-devel"
-ruby_gtk3_devel_CONTENTS="usr/include/ usr/lib/lib*.a usr/lib/pkgconfig/"
+ruby_gtk3_devel_REQUIRES=${NAME}
+ruby_gtk3_devel_CONTENTS="usr/lib/pkgconfig/"
 ruby_gtk3_doc_CONTENTS="${RUBYGEM_DOCDIR#/} ${RUBYGEM_INSTDIR#/}/sample/"
 
-DEPS_PATH="${RUBYGEM_EXTDIR%/*}/cairo-*:${RUBYGEM_EXTDIR%/*}/glib2-${VERSION}:${RUBYGEM_EXTDIR%/*}/gdk3-${VERSION}:${RUBYGEM_EXTDIR%/*}/pango-${VERSION}"
+DEPS_PATH="${RUBYGEM_EXTDIR%/*}/cairo-*:${RUBYGEM_EXTDIR%/*}/glib2-${VERSION}:${RUBYGEM_EXTDIR%/*}/gdk3-${VERSION}:${RUBYGEM_EXTDIR%/*}/gobject-introspection-${VERSION}:${RUBYGEM_EXTDIR%/*}/pango-${VERSION}"
