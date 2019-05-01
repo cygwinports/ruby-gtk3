@@ -1,7 +1,7 @@
 inherit rubygem
 
 NAME="ruby-gtk3"
-VERSION=3.1.8
+VERSION=3.2.9
 RELEASE=1
 CATEGORY="Ruby"
 SUMMARY="Ruby GTK+3 bindings"
@@ -15,5 +15,7 @@ ruby_gtk3_CONTENTS="--exclude=sample ${RUBYGEM_EXTDIR#/} ${RUBYGEM_INSTDIR#/} ${
 ruby_gtk3_devel_REQUIRES=${NAME}
 ruby_gtk3_devel_CONTENTS="usr/lib/pkgconfig/"
 ruby_gtk3_doc_CONTENTS="${RUBYGEM_DOCDIR#/} ${RUBYGEM_INSTDIR#/}/sample/"
+# no public API
+PKG_IGNORE="usr/lib/libruby-gtk3.a"
 
 DEPS_PATH="${RUBYGEM_EXTDIR%/*}/cairo-*:${RUBYGEM_EXTDIR%/*}/glib2-${VERSION}:${RUBYGEM_EXTDIR%/*}/gdk3-${VERSION}:${RUBYGEM_EXTDIR%/*}/gobject-introspection-${VERSION}:${RUBYGEM_EXTDIR%/*}/pango-${VERSION}"
